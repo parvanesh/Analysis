@@ -15,7 +15,6 @@ tweets <- searchTwitter("GDPR", lang = "en" , n = 5000) %>%
   twListToDF() %>%
   select(id, text)
 
-tweets = read.csv("C:/Users/parvaneh.shafiei/Documents/My projects/weblog/GDPR/tweets_gdpr.csv", header = TRUE,sep = ";", stringsAsFactors = FALSE)
 #remove dupliated tweets
 tweets <- subset(tweets, !duplicated(tweets$text))
 #convert tweets to token
